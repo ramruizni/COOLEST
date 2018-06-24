@@ -32,7 +32,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ActivityMain extends AppCompatActivity implements
+public class MainActivity extends AppCompatActivity implements
         FragmentList.OnFragmentInteractionListener,
         FragmentSong.OnFragmentInteractionListener,
         FragmentMyLists.OnFragmentInteractionListener,
@@ -196,11 +196,11 @@ public class ActivityMain extends AppCompatActivity implements
             public void onConnected() {
                 super.onConnected();
                 try {
-                    MediaControllerCompat mMediaControllerCompat = new MediaControllerCompat(ActivityMain.this, mediaBrowserCompat.getSessionToken());
+                    MediaControllerCompat mMediaControllerCompat = new MediaControllerCompat(MainActivity.this, mediaBrowserCompat.getSessionToken());
                     mMediaControllerCompat.registerCallback(mediaControllerCompatCallback);
 
-                    MediaControllerCompat.setMediaController(ActivityMain.this, mMediaControllerCompat);
-                    tpControls = MediaControllerCompat.getMediaController(ActivityMain.this).getTransportControls();
+                    MediaControllerCompat.setMediaController(MainActivity.this, mMediaControllerCompat);
+                    tpControls = MediaControllerCompat.getMediaController(MainActivity.this).getTransportControls();
 
                 } catch (RemoteException e) {
                     e.printStackTrace();
